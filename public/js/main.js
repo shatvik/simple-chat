@@ -33,3 +33,7 @@ socket.on("message", (message) => {
 socket.on("user-disconnected", (username) => {
   alert(username + " disconnected.. Thank you have a nice day");
 });
+
+socket.on("new-userjoined", (newuser) => {
+  alert(`${newuser} joined the chat room..you can start chatting with them`);
+});

@@ -28,6 +28,7 @@ io.on("connection", (socket) => {
   //   console.log(`User: ${socket.id} connected`);
   socket.on("user-joined", (user) => {
     console.log(user, "joined the chat room");
+    socket.broadcast.emit("new-userjoined", user);
     AllUsers[socket.id] = user;
     let emailBhejnewala = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -45,7 +46,7 @@ io.on("connection", (socket) => {
       subject: `${user} has joined chat room..`,
       text: "Change to html view to see info",
       html: `${user} has joined the chat room and is waiting for you...
-      <a href="https://simple-chat.onrender.com">click here</a> to join :>`,
+      <a href="https://simple-chat-2tcz.onrender.com">click here</a> to join :>`,
     };
     emailBhejnewala
       .sendMail(mailDetails)
@@ -68,7 +69,11 @@ io.on("connection", (socket) => {
   });
   socket.on("disconnect", () => {
     console.log("user " + AllUsers[socket.id] + " has disconnected");
-    socket.broadcast.emit("user-disconnected", AllUsers[socket.id]);
+    if (AllUsers[socket.id]) {
+      socket.broadcast.emit("user-disconnected", AllUsers[socket.id]);
+    } else {
+      socket.broadcast.emit("user-disconnected", "User has disconnected");
+    }
   });
 });
 

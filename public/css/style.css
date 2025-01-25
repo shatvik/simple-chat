@@ -36,40 +36,57 @@
 }
 
 .type-chat {
+  position: fixed; /* Fix the container at the bottom of the screen */
+  bottom: 0; /* Ensure it's at the bottom */
+  left: 0; /* Align it with the left edge */
   height: 5%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: linear-gradient(#e66465, #9198e5); */
+  /* background: linear-gradient(#e66465, #9198e5); Optional background */
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
+  padding: 10px; /* Add some padding for spacing */
+  z-index: 10; /* Ensure it stays on top of other elements */
 }
 
 #chat {
   outline: none;
   width: 90%;
   height: 100%;
+  min-height: 40px;
   padding: 1rem;
   font-size: large;
   background-color: #444;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5rem;
   border: none;
-  color: #FFFFFF;
-  box-shadow: 0 0 4px 2px rgba(33, 103, 254,0.9);
+  color: #ffffff;
+  box-shadow: 0 0 4px 2px rgba(33, 103, 254, 0.9);
 }
 
 #send-btn {
-  width: 10%;
-  height: 100%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0 0 5px 2px rgba(0, 125, 31,0.8);
-  background-color: rgb(0, 125, 31);
-  border-radius: 5rem;
-  color: #f5f5f5;
+  width: 15%; /* Adjust width to look balanced */
+  height: auto; /* Let the height adjust automatically */
+  padding: 10px; /* Add padding for better spacing */
+  border: none; /* Remove border */
+  outline: none; /* Remove the outline */
+  cursor: pointer; /* Add a pointer cursor */
+  box-shadow: 0 0 5px 2px rgba(0, 125, 31, 0.8); /* Glow effect */
+  background-color: rgb(0, 125, 31); /* Button color */
+  border-radius: 50px; /* Circular corners */
+  color: #ffffff; /* Text color */
+  font-size: 1rem; /* Increase font size for readability */
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Make the text uppercase */
+  transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+#send-btn:hover {
+  background-color: #006400; /* Darker green on hover */
+  box-shadow: 0 0 10px 4px rgba(0, 125, 31, 0.8); /* Enhance the glow effect */
+  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
 li {
