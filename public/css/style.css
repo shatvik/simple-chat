@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chat-window {
+  height: 100vh;
+  width: 100vw;
+  background-color: #333;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.chat-page {
+  height: 98vh;
+  width: 98vw;
+  /* background-color: #000; */
+  display: flex;
+  flex-direction: column;
+}
+
+.chats {
+  height: 95%;
+  width: 100%;
+  background-color: #000;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.type-chat {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: linear-gradient(#e66465, #9198e5); */
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+#chat {
+  outline: none;
+  width: 90%;
+  height: 100%;
+  padding: 1rem;
+  font-size: large;
+  background-color: #444;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5rem;
+  border: none;
+  color: #FFFFFF;
+  box-shadow: 0 0 4px 2px rgba(33, 103, 254,0.9);
+}
+
+#send-btn {
+  width: 10%;
+  height: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(0, 125, 31,0.8);
+  background-color: rgb(0, 125, 31);
+  border-radius: 5rem;
+  color: #f5f5f5;
+}
+
+li {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  list-style: none;
+  color: #f5f5f5;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  max-width: 80%; /* Allow the bubble to expand but with a max width */
+  width: auto;
+  display: inline-block;
+}
+
+.userA {
+  background-color: rgb(44, 110, 243);
+  align-self: flex-start; /* Align to the left */
+}
+
+.userB {
+  background-color: rgb(62, 201, 88);
+  align-self: flex-end; /* Align to the right */
+}
